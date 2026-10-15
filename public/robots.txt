@@ -1,0 +1,13 @@
+# Robots.txt for Alfa Express Logistics (alfaexpressco.com)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://alfaexpressco.com/sitemap.xml
+Sitemap: https://alfaexpressco.com/sitemap_index.xml
+
+# Disallow sensitive WordPress directories if deployed on WP
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /readme.html
+Disallow: /license.txt

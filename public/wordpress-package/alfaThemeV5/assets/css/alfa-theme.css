@@ -1,0 +1,884 @@
+/**
+ * Alfa Express Logistics - Core Theme Stylesheet
+ * High-performance dark aesthetic with red crimson accents and RTL perfection
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+/* Typography & Global Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #070d1d;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 95px;
+}
+
+::selection {
+  background-color: #e30613;
+  color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* WordPress Admin Bar Compatibility */
+.admin-bar .alfa-header {
+  top: 32px !important;
+}
+@media screen and (max-width: 782px) {
+  .admin-bar .alfa-header {
+    top: 46px !important;
+  }
+}
+
+/* Layout Utilities */
+.alfa-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .alfa-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .alfa-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Header & Brand */
+.alfa-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(7, 13, 29, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.alfa-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .alfa-header-inner {
+    min-height: 58px;
+    gap: 8px;
+  }
+}
+
+.custom-logo,
+.custom-logo-link img,
+.alfa-brand-logo-img {
+  max-height: 48px !important;
+  max-width: 150px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.alfa-logo-box {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+}
+
+.alfa-brand-title {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 640px) {
+  .custom-logo,
+  .custom-logo-link img,
+  .alfa-brand-logo-img {
+    max-height: 28px !important;
+  }
+  .alfa-logo-box {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+  }
+  .alfa-brand-title {
+    font-size: 0.95rem !important;
+  }
+  .alfa-brand-subtitle {
+    font-size: 0.65rem !important;
+  }
+}
+
+.alfa-desktop-nav {
+  display: none;
+}
+
+@media (min-width: 1040px) {
+  .alfa-desktop-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    margin: 0 0.5rem;
+    overflow: hidden;
+  }
+  .alfa-mobile-toggle-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile Header Layout Protection (Prevent horizontal shift & overflow) */
+@media (max-width: 768px) {
+  .alfa-header-inner {
+    height: 60px !important;
+    padding: 0 2px;
+    gap: 6px;
+  }
+  .alfa-brand-subtitle {
+    display: none !important;
+  }
+  .alfa-header-actions {
+    gap: 5px !important;
+  }
+  .alfa-header-actions .alfa-btn-primary {
+    padding: 0.45rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 8px !important;
+  }
+  .alfa-theme-toggle-btn,
+  .alfa-mobile-toggle-btn {
+    min-width: 36px !important;
+    min-height: 36px !important;
+    padding: 0.4rem !important;
+    border-radius: 8px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .alfa-header-inner {
+    height: 54px !important;
+  }
+  .alfa-brand-title {
+    font-size: 0.85rem !important;
+  }
+  .alfa-logo-box {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+  }
+  .alfa-header-actions .alfa-btn-primary {
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+.alfa-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alfa-nav-item a,
+.alfa-nav-list li a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 1240px) {
+  .alfa-nav-list {
+    gap: 0.3rem;
+  }
+  .alfa-nav-item a,
+  .alfa-nav-list li a {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.83rem;
+  }
+}
+
+.alfa-nav-item a:hover,
+.alfa-nav-list li a:hover,
+.alfa-nav-item.current-menu-item a,
+.alfa-nav-list li.current-menu-item a {
+  color: #ffffff;
+  background: rgba(227, 6, 19, 0.15);
+  border: 1px solid rgba(227, 6, 19, 0.35);
+}
+
+@media (max-width: 640px) {
+  .alfa-hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Primary Buttons */
+.alfa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.alfa-btn-primary {
+  background: linear-gradient(135deg, #e30613 0%, #b8000b 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(227, 6, 19, 0.4);
+}
+
+.alfa-btn-primary:hover {
+  background: linear-gradient(135deg, #f00817 0%, #c8000c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(227, 6, 19, 0.5);
+}
+
+.alfa-btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.alfa-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.alfa-btn-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.alfa-btn-whatsapp:hover {
+  background: #20BA5A;
+  box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+}
+
+/* Cards & Surfaces */
+.alfa-card {
+  background: #0b1429;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+}
+
+.alfa-card:hover {
+  border-color: rgba(227, 6, 19, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 25px 45px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* Badges */
+.alfa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.alfa-badge-red {
+  background: rgba(227, 6, 19, 0.12);
+  border-color: rgba(227, 6, 19, 0.3);
+  color: #ff6b6b;
+}
+
+/* Hero Section & Responsive Main Grid */
+.alfa-hero-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .alfa-hero-main-grid {
+    grid-template-columns: 1.1fr 0.9fr !important;
+  }
+}
+
+/* Grids */
+.alfa-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .alfa-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.alfa-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .alfa-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .alfa-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.alfa-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .alfa-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .alfa-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Form Controls */
+.alfa-input,
+.alfa-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.85rem;
+  background: #060c1c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.alfa-input:focus,
+.alfa-select:focus {
+  border-color: #e30613;
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.2);
+}
+
+/* FAQs */
+.alfa-faq-item {
+  background: #0b1429;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.alfa-faq-item[open] {
+  border-color: rgba(227, 6, 19, 0.35);
+  background: #0d1833;
+}
+
+.alfa-faq-item summary {
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.alfa-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.alfa-faq-content {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* 3D Scene Specific Styling */
+#alfa-3d-hero-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  min-height: 480px;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: radial-gradient(ellipse at center, #0a1733 0%, #030712 100%);
+  box-shadow: 0 0 50px -10px rgba(227, 6, 19, 0.35);
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  #alfa-3d-hero-container {
+    height: 380px !important;
+    min-height: 380px !important;
+  }
+}
+
+#alfa-3d-canvas-mount {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: grab;
+}
+
+#alfa-3d-canvas-mount:active {
+  cursor: grabbing;
+}
+
+#alfa-3d-canvas-mount canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Scroll Progress Tracker & Back To Top Floating Action */
+#alfa-scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #e30613 0%, #f59e0b 50%, #38bdf8 100%);
+  width: 0%;
+  z-index: 99999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(227, 6, 19, 0.8);
+  transition: width 0.08s ease-out;
+}
+
+.alfa-floating-scroll-hub {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.alfa-back-to-top-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0b1429;
+  border: 1px solid rgba(227, 6, 19, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alfa-back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.alfa-back-to-top-btn:hover {
+  background: #e30613;
+  border-color: #e30613;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(227, 6, 19, 0.5);
+}
+
+/* Scroll Reveal Animations */
+.alfa-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.alfa-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SVG Interactive Map Animations & Light Waves */
+@keyframes alfa-beacon-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0.2; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.alfa-map-beacon-ping {
+  animation: alfa-beacon-pulse 2s infinite ease-out;
+  transform-origin: center;
+}
+
+@keyframes alfa-dash-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.alfa-map-route-active {
+  animation: alfa-dash-flow 1.5s linear infinite;
+}
+
+/* Elementor Fullwidth Compatibility */
+.alfa-elementor-fullwidth-content,
+.elementor-page .site-main {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.elementor-template-canvas {
+  background-color: #070d1d;
+  color: #f1f5f9;
+}
+
+/* ========================================================
+   LIGHT MODE DESIGN SYSTEM - ALFA WORDPRESS THEME
+   ======================================================== */
+[data-theme="light"],
+html.light,
+body.light-theme {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] header.alfa-header,
+body.light-theme header.alfa-header,
+[data-theme="light"] #alfa-main-header,
+body.light-theme #alfa-main-header {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .alfa-brand-title,
+body.light-theme .alfa-brand-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .alfa-brand-subtitle,
+body.light-theme .alfa-brand-subtitle {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .alfa-logo-box,
+body.light-theme .alfa-logo-box {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .alfa-nav-item a,
+body.light-theme .alfa-nav-item a,
+[data-theme="light"] .alfa-nav-list li a,
+body.light-theme .alfa-nav-list li a {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .alfa-nav-item a:hover,
+body.light-theme .alfa-nav-item a:hover,
+[data-theme="light"] .alfa-nav-list li a:hover,
+body.light-theme .alfa-nav-list li a:hover,
+[data-theme="light"] .alfa-nav-item.current-menu-item a,
+body.light-theme .alfa-nav-item.current-menu-item a {
+  color: #e30613 !important;
+  background: rgba(227, 6, 19, 0.08) !important;
+  border-color: rgba(227, 6, 19, 0.25) !important;
+}
+
+/* Sections & Structural Blocks in Light Mode */
+[data-theme="light"] section,
+body.light-theme section,
+[data-theme="light"] main,
+body.light-theme main {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] #hero,
+body.light-theme #hero {
+  background: radial-gradient(ellipse at top, #ffffff 0%, #f1f5f9 90%) !important;
+}
+
+[data-theme="light"] #about,
+body.light-theme #about,
+[data-theme="light"] #cbm-calculator,
+body.light-theme #cbm-calculator,
+[data-theme="light"] #branches,
+body.light-theme #branches,
+[data-theme="light"] #faq,
+body.light-theme #faq,
+[data-theme="light"] #map-route,
+body.light-theme #map-route {
+  background-color: #f8fafc !important;
+}
+
+[data-theme="light"] #services,
+body.light-theme #services,
+[data-theme="light"] #process,
+body.light-theme #process,
+[data-theme="light"] #reviews,
+body.light-theme #reviews,
+[data-theme="light"] #tracking,
+body.light-theme #tracking,
+[data-theme="light"] #quote,
+body.light-theme #quote {
+  background-color: #ffffff !important;
+}
+
+/* Headings & Texts in Light Mode */
+[data-theme="light"] h1,
+body.light-theme h1,
+[data-theme="light"] h2,
+body.light-theme h2,
+[data-theme="light"] h3,
+body.light-theme h3,
+[data-theme="light"] h4,
+body.light-theme h4,
+[data-theme="light"] h5,
+body.light-theme h5,
+[data-theme="light"] h6,
+body.light-theme h6,
+[data-theme="light"] strong,
+body.light-theme strong {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] p,
+body.light-theme p {
+  color: #334155 !important;
+}
+
+/* Surfaces & Cards in Light Mode */
+[data-theme="light"] .alfa-card,
+body.light-theme .alfa-card,
+[data-theme="light"] .alfa-panel,
+body.light-theme .alfa-panel,
+[data-theme="light"] .alfa-feature-box,
+body.light-theme .alfa-feature-box,
+[data-theme="light"] .alfa-branch-card,
+body.light-theme .alfa-branch-card,
+[data-theme="light"] .alfa-faq-item,
+body.light-theme .alfa-faq-item,
+[data-theme="light"] .alfa-step-card,
+body.light-theme .alfa-step-card,
+[data-theme="light"] .alfa-review-card,
+body.light-theme .alfa-review-card,
+[data-theme="light"] .alfa-van-float-badge,
+body.light-theme .alfa-van-float-badge,
+[data-theme="light"] #alfa-map-container-box,
+body.light-theme #alfa-map-container-box,
+[data-theme="light"] .alfa-truck-info-box,
+body.light-theme .alfa-truck-info-box {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .alfa-van-float-badge span,
+body.light-theme .alfa-van-float-badge span {
+  color: #0f172a !important;
+}
+
+/* Outline Buttons */
+[data-theme="light"] .alfa-btn-outline,
+body.light-theme .alfa-btn-outline {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .alfa-btn-outline:hover,
+body.light-theme .alfa-btn-outline:hover {
+  background-color: #e2e8f0 !important;
+  color: #e30613 !important;
+}
+
+/* Badges */
+[data-theme="light"] .alfa-badge,
+body.light-theme .alfa-badge {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .alfa-badge-red,
+body.light-theme .alfa-badge-red {
+  background-color: rgba(227, 6, 19, 0.08) !important;
+  border-color: rgba(227, 6, 19, 0.25) !important;
+  color: #c8000c !important;
+}
+
+/* Mobile Drawer in Light Mode */
+[data-theme="light"] #alfa-mobile-drawer,
+body.light-theme #alfa-mobile-drawer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] #alfa-mobile-drawer a,
+body.light-theme #alfa-mobile-drawer a,
+[data-theme="light"] .alfa-mobile-link,
+body.light-theme .alfa-mobile-link {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] #alfa-mobile-drawer a:hover,
+body.light-theme #alfa-mobile-drawer a:hover,
+[data-theme="light"] .alfa-mobile-link:hover,
+body.light-theme .alfa-mobile-link:hover {
+  background-color: rgba(227, 6, 19, 0.08) !important;
+  color: #e30613 !important;
+}
+
+[data-theme="light"] #alfa-mobile-theme-label,
+body.light-theme #alfa-mobile-theme-label {
+  color: #0f172a !important;
+}
+
+/* Form Inputs */
+[data-theme="light"] input,
+body.light-theme input,
+[data-theme="light"] select,
+body.light-theme select,
+[data-theme="light"] textarea,
+body.light-theme textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] input:focus,
+body.light-theme input:focus,
+[data-theme="light"] select:focus,
+body.light-theme select:focus,
+[data-theme="light"] textarea:focus,
+body.light-theme textarea:focus {
+  border-color: #e30613 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.15) !important;
+}
+
+/* Vertical Wayfinder */
+[data-theme="light"] #alfa-vertical-wayfinder,
+body.light-theme #alfa-vertical-wayfinder {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] #alfa-vertical-wayfinder span,
+body.light-theme #alfa-vertical-wayfinder span {
+  color: #334155 !important;
+}
+
+/* Footer & Mobile Bar */
+[data-theme="light"] footer.alfa-footer,
+body.light-theme footer.alfa-footer,
+[data-theme="light"] footer,
+body.light-theme footer {
+  background-color: #0b1429 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme="light"] .alfa-mobile-bar,
+body.light-theme .alfa-mobile-bar,
+[data-theme="light"] .alfa-mobile-dock,
+body.light-theme .alfa-mobile-dock {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-top-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .alfa-mobile-bar .alfa-btn-outline,
+body.light-theme .alfa-mobile-bar .alfa-btn-outline,
+[data-theme="light"] .alfa-mobile-dock .alfa-btn-outline,
+body.light-theme .alfa-mobile-dock .alfa-btn-outline {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+

@@ -1,0 +1,52 @@
+/*
+Theme Name: alfaExpressV5.8
+Theme URI: https://jenova.media
+Author: Jenova Media
+Author URI: https://jenova.media
+Description: قالب ألفا إكسبريس اللوجستي الشامل والمستقل بالكامل - الإصدار المحدث (alfaExpressV5.8) من تطوير Jenova Media (jenova.media). يشمل أحدث التحديثات: إصلاح شامل ونهائي لصفحة طلب عرض سعر (page-quote.php) وحاسبة الأسعار CBM، التوافق التام مع نقرات أزرار التسعير في كافة أقسام وصفحات الموقع دون أية أخطاء، ضبط كامل ودقيق لهيدر وشريط التنقل لمنع أي تشوه في العرض على أجهزة الكمبيوتر والجوال، دعم كامل وتام للوضع النهاري والليلي (Light/Dark Mode) مع مفتاح تبديل فوري، شريط تنقل علوي متكامل لجميع أقسام وصفحات الموقع على شاشات سطح المكتب والجوال، التركيز الحصري على الشحن البري الدولي من السعودية إلى مصر بأسطول الشاحنات المبطنة والتريلات، حاسبة الشحن التفاعلية بالأبعاد والمتر المكعب (CBM)، دليل الأسئلة الشائعة، ولوحة تخصيص صور وآراء العملاء ومستورد شامل بضغطة واحدة وتوافق 100% مع Elementor.
+Version: 5.8.0
+Requires at least: 5.8
+Tested up to: 6.7
+Requires PHP: 7.4
+Text Domain: alfa-express
+Domain Path: /languages
+Tags: logistics, shipping, cargo, land-freight, cbm-calculator, rtl, custom-colors, full-site-editing, one-click-importer, dark-mode, light-mode, responsive-layout
+*/
+
+/* Base Theme Variables & RTL Foundation */
+:root {
+  --alfa-bg-dark: #070d1d;
+  --alfa-bg-card: #0b1429;
+  --alfa-bg-card-hover: #101c38;
+  --alfa-primary: #e30613;
+  --alfa-primary-hover: #b8000b;
+  --alfa-accent: #38bdf8;
+  --alfa-border: rgba(255, 255, 255, 0.1);
+  --alfa-border-light: rgba(255, 255, 255, 0.05);
+  --alfa-text-main: #f8fafc;
+  --alfa-text-muted: #94a3b8;
+  --alfa-text-dim: #64748b;
+  --alfa-gold: #f59e0b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--alfa-bg-dark);
+  color: var(--alfa-text-main);
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

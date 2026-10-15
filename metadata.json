@@ -1,0 +1,6 @@
+{
+  "name": "ألفا إكسبريس | الشحن البري الدولي",
+  "description": "شركة ألفا إكسبريس للشحن البري الدولي - أسطول شاحنات مجهز لنقل العفش والبضائع والطرود من السعودية إلى مصر بأسعار تبدأ من 150 ريال وبخبرة 15 عاماً.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

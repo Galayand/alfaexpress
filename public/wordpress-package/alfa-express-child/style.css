@@ -1,0 +1,32 @@
+/*
+Theme Name: Alfa Express 3D Child
+Theme URI: https://alfaexpressco.com/
+Description: القالب الابن المطور لشركة ألفا إكسبريس للخدمات اللوجستية والشحن الدولي - يدعم التجربة التفاعلية ثلاثية الأبعاد وعروض الأسعار والفروع.
+Author: Senior WordPress & 3D Engineering
+Author URI: https://alfaexpressco.com/
+Template: hello-elementor
+Version: 2.0.0
+Text Domain: alfa-express-child
+*/
+
+:root {
+  --alfa-red: #E30613;
+  --alfa-red-dark: #b8000b;
+  --alfa-blue: #0b1429;
+  --alfa-navy: #070d1d;
+  --alfa-light: #f8fafc;
+}
+
+body.rtl {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  background-color: var(--alfa-navy);
+  color: var(--alfa-light);
+}
+
+.alfa-3d-hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  border-radius: 24px;
+  overflow: hidden;
+}
